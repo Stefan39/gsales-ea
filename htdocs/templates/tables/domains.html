@@ -1,0 +1,37 @@
+{include file="inc/header.html"}
+<h1>Alle Domains</h1>
+<a href="/tables/domains.php?action=new">Neue Domain anlegen</a>
+
+<table class="dataTable">
+	<thead>
+		<tr>
+			<th style="width:60px;">ID</th>
+			<th style="width:120px;">Datum</th>
+			<th>Domainname</th>
+			<th style="width:80px;">Server</th>
+			<th style="width:100px;">Im Netz</th>
+			<th style="width:60px;">Spidert</th>
+			<th style="width:60px;text-align:right">Aktion</th>
+		</tr>
+	</thead>
+	<tbody>
+	{if isset($data) && is_array($data)}
+	{foreach $data as $erg}
+	<tr>
+		<td>{$erg['id']}</td>
+		<td>{$erg['created']}</td>
+		<td>{$erg['domainname']}</td>
+		<td>{$erg['servername']}</td>
+		<td>{$erg['network']}</td>
+		<td>{$erg['spiderd']}</td>
+		<td style="text-align:right;">
+			<a href="{$erg['domainname']}" target="_blank" title="Domain besuchen"><img src="/img/house_go.png" alt="Domain besuchen" /></a> 
+			<a href="/crawler/spider.php?domain={$erg['id']}" title="Domain spidern"><img src="/img/sitemap_color.png" alt="Domain spidern" /></a>
+			<img src="/img/trash.png" alt="Domain löschen" title="Domain löschen" class="pClick" id="delete|domain|{$erg['id']}" />
+		</td>
+	</tr>
+	{/foreach}
+	{/if}
+	</tbody>
+</table>
+{include file="inc/footer.html"}

@@ -1,0 +1,28 @@
+{include file="inc/header.html"}
+<h1>{$title}</h1>
+<fieldset id="install">
+	<form action="" method="post">
+		<p>Tragen Sie bitte hier Ihre Datenbank-Verbindungs-Daten einer <u>zuvor erstellten</u> Datenbank ein. Der
+		Installer versucht im Anschluss in dieser Datenbank die Tabellen zu installieren.</p>
+		<div class="row">
+			<label for="hostspec" class="left">DB-Hostname</label>
+			<input type="text" name="hostspec" id="hostspec" value="localhost" />
+		</div>
+		<div class="row">
+			<label for="username" class="left">DB-Benutzername</label>
+			<input type="text" name="username" id="username" value="" />
+		</div>
+		<div class="row">
+			<label for="password" class="left">DB-Passwort</label>
+			<input type="text" name="password" id="password" value="" />
+		</div>
+		<div class="row">
+			<label for="database" class="left">DB-Name</label>
+			<input type="text" name="database" id="database" value="" />
+		</div>
+	</form>
+	<br/>
+	<input type="hidden" name="action" value="step2" />
+	<input type="submit" name="step2" value="Datenbank prüfen & Tabellen installieren" class="submit" />
+</fieldset>
+{include file="inc/footer.html" sidebar="false"}

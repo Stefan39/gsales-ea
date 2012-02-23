@@ -1,0 +1,29 @@
+{include file="inc/header.html"}
+<h1>Server</h1>
+<a href="/tables/server.php?action=new">Neuen Server eintragen</a>
+
+<table class="dataTable">
+	<thead>
+		<tr>
+			<th style="width:60px;">ID</th>
+			<th>Servername</th>
+			<th style="width:80px">Domains</th>
+			<th style="width:80px;text-align:right;">Aktion</th>
+		</tr>
+	</thead>
+	<tbody>
+	{if is_array($data)}
+	{foreach $data as $erg}
+	<tr>
+		<td>{$erg['id']}</td>
+		<td>{$erg['servername']}</td>
+		<td style="text-align:center;">{$erg['domains']}</td>
+		<td style="text-align:right;">
+			<img src="/img/server_delete.png" alt="Server löschen" title="Server löschen" class="pClick" id="{$erg['id']}" />
+		</td>
+	</tr>
+	{/foreach}
+	{/if}
+	</tbody>
+</table>
+{include file="inc/footer.html"}

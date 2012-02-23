@@ -1,0 +1,26 @@
+{include file="inc/header.html"}
+<h1>{$title}</h1>
+<fieldset id="install">
+	<form action="" method="post">
+		<p>Mit dieser Installations-Routine installieren Sie gSales-EA (Einnahme/Ausgabe). Da diese Version 
+		immer noch im BETA-Status ist, geschieht die Installation auf eigene Gefahr. Wir übernehmen keine 
+		Haftung bei Schäden an Ihrem System und/oder ihrer vorhandenen gSales-v2 Installation.</p>
+		<p>gSales-EA liest eigentlich zwar nur von gSales-v2, kann aber nicht garantieren, dass bei der 
+		einen oder anderen API-Funktion von gSales nicht auch Daten in einer gSales-v2-Version verändert
+		werden.</p>
+		<p>Alle Ihre hier hinterlegten empfindlichen Daten werden im Verzeichnis /includes/config und im 
+		Vereichnis /pdfs gespeichert. In beiden Verzeichnissen sollte eine Datei namens .htaccess 
+		vorliegen, in der lediglich folgendes steht:<br/>
+		<code>Deny from all</code><br/>
+		Prüfen Sie, ob Dateien in den Ordnern direkt von Ihrer Domain aufrufbar sind:<br/>
+		<code>{$smarty.server.HTTP_HOST}/includes/index.php</code><br/>
+		Gibt der Browser bei Eingabe der obigen URL den Text &quot;Oh oh... nicht gut&quot; aus, 
+		funktioniert die Direktive nicht. Sprechen Sie in diesem Fall Ihren Server-Admin an, der dafür 
+		Sorge tragen sollte, dass diese beiden Verzeichnisse geschützt sind.</p>
+		<p>Übrigens, dieser Schutz sollte dennoch vorgenommen werden, auch wenn ein separater htaccess
+		AuthBasic Autentifikations-Schutz installiert wird!</p>
+		<input type="hidden" name="action" value="step1" />
+		<input type="submit" name="next" value="Installation starten" class="submit"/>
+	</form>
+</fieldset>
+{include file="inc/footer.html" sidebar="false"}

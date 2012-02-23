@@ -1,0 +1,35 @@
+{include file="inc/header.html"}
+<h1>Neue Domain anlegen</h1>
+
+<form action="" method="post" class="formBox">
+	<div class="row">
+		<label for="domainname" class="left">Domainname</label>
+		<input type="url" name="domainname" id="domainname" value="{if isset($data['domainname'])}{$data['domainname']}{/if}" size="24" placeholder="http://www.domain.tld" />
+	</div>
+	<div class="row">
+		<label for="server" class="left">Servername</label>
+		<select name="server" id="server" size="1" placeholder="Servername">
+			{if isset($server) && is_array($server)}
+			{foreach $server as $sv}
+			<option value="{$sv['id']}">{$sv['servername']}</option>
+			{/foreach}
+			{/if}
+		</select> <img src="/img/add.png" alt="Server hinzufügen" title="Server hinzufügen" class="pClick" id="add|server" />
+	</div>
+	<div class="row">
+		<label for="netz" class="left">Netzwerk</label>
+		<select name="netz" id="netz" size="1" placeholder="Sub-Netzwerk">
+			{if isset($networks) && is_array($networks)}
+			{print_r($networks)}
+			{foreach $networks as $net}
+			<option value="{$net['id']}">
+				{if !empty($net['subnetz'])}- {/if}
+				{$net['networkname']}
+			</option>
+			{/foreach}
+			{/if}
+		</select> <img src="/img/add.png" alt="Netzwerk hinzufügen" title="Netzwerk hinzufügen" class="pClick" id="add|network" />
+	</div>
+	<p class="submit"><input type="submit" name="save" id="save" value="Speichern" /></p>
+</form>
+{include file="inc/footer.html"}

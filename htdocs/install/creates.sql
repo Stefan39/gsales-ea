@@ -1,0 +1,4 @@
+CREATE TABLE `users` IF NOT EXISTS (`id` BIGINT AUTO_INCREMENT, `username` CHAR(32) NOT NULL, `grp` ENUM('admin','member') NOT NULL DEFAULT 'member', PRIMARY KEY `id` (`id`), UNIQUE KEY `username` (`username`)) DEFAULT CHARSET=utf8;
+CREATE TABLE `invoices` IF NOT EXISTS () DEFAULT CHARSET=utf8;
+CREATE TABLE `companies` IF NOT EXISTS () DEFAULT CHARSET=utf8;
+CREATE TABLE `categories` IF NOT EXISTS () DEFAULT CHARSET=utf8;

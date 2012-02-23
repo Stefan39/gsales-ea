@@ -1,0 +1,231 @@
+/**
+ * Admin-Styles
+ */
+
+* {margin:0;padding:0;}
+html, body {
+	height: 100%;
+}
+body {
+	background: #E1E1E1 url('img/bg_body.gif') repeat-x top center;
+	font-family: Verdana,Helvetica,sans-serif;
+	font-size: 0.8em;
+	color: #000;
+}
+a {text-decoration: none;color: #0C3950}
+a:hover {text-decoration: underline;}
+
+/* Page-Formatierungen */
+#page {
+	position: relative;
+	background: #fff;
+	margin: 40px 20px 0px 20px;
+	padding-bottom: 10px;
+	box-shadow: #999 3px 3px 5px;
+	border-radius-topleft: 5px;
+	border-radius-topright: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-khtml-border-radius-topright: 5px;
+	-khtml-border-radius-topleft: 5px;
+	-webkit-border-radius-topleft: 5px;
+	-webkit-border-radius-topright: 5px;
+	-o-border-radius-topleft: 5px;
+	-o-border-radius-topright: 5px;
+	min-height:75%;
+}
+
+/* Header */
+#header {}
+#header .logo {
+	position:relative;
+	top: -37px;
+	left: 10px;
+	background: transparent url('');
+}
+/* Breadcrumbs */
+#breadcrumbs {
+	position: absolute;
+	top: 10px;
+	left: 224px;
+	font-size: 85%;
+	color: #999;
+}
+#breadcrumbs a {text-decoration:none;color:#999;}
+#breadcrumbs a:hover {text-decoration:underline;}
+/* Content */
+#content {
+    position: relative;
+	margin: -5px 25px 0px 220px;
+	padding: 5px 15px 5px 5px;
+}
+#content h1 {
+	position:absolute;
+	top: -35px;
+	font-size:150%;
+	color: #222;
+}
+#content p {
+	line-height: 16px;
+	margin-bottom: 1.5em;
+}
+#content a {text-decoration:underline;color:#666;}
+#content a:hover {text-decoration:none;}
+
+#content textarea#domains {
+    width: 100%;
+    min-height: 150px;
+}
+
+/* Sidebar */
+#sidebar {
+	position:absolute;
+	top:50px;
+	left:10px;
+	width: 190px;
+	padding: 0px 5px 0px 10px;
+}
+#sidebar .userpref {
+	margin-left:10px;
+	color: #185675;
+}
+#sidebar ul {
+	display: list;
+	list-style: none;
+	margin: 10px 5px 0px 5px;
+}
+#sidebar ul li {
+	list-style-type: none;
+	padding: 5px 0px 5px 12px;
+	background: url('img/bg_nav_arrow.gif') no-repeat left 10px;
+	border-bottom: 1px solid #e1e1e1;
+}
+#sidebar ul li a {
+	text-decoration: none;
+	color: #444;
+}
+#sidebar ul li ul {
+	display: none;
+	margin: 5px 0px 0px 0px;
+}
+#sidebar ul li ul li {
+	padding: 0px 0px 3px 2px;
+	background:none;
+	border:none;
+}
+.open {
+	background: url('img/bg_nav_open.gif') no-repeat left 10px;
+}
+.close {
+
+}
+/* Search box */
+#search {
+	position: absolute;
+	background: #0C3950;
+	top: -15px;
+	right: 28px;
+	padding: 5px;
+	box-shadow: 2px 2px 5px #999;
+	-moz-box-shadow: 2px 2px 5px #999;
+	-webkit-box-shadow: 2px 2px 5px #999;
+	-o-box-shadow: 2px 2px 5px #999;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+#search .search {
+	background: #185675;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	border:none;
+	color: #fff;
+	padding: 3px;
+}
+#search .search_button {
+	background: #185675;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	border: 1px solid #062433;
+	padding: 3px;
+	color: #fff;
+}
+/* Footer */
+#footer {
+	border-top: 5px solid #185675;
+	margin: 3px 20px 10px 20px;
+	padding: 5px 2px 0px 0px;
+	font-size: 85%;
+	text-align:right;
+	color: #333;
+}
+#footer a {
+	text-decoration: none;
+	color: #000;
+}
+
+/* Helper Styles */
+.absRight {
+    position: absolute;
+    top: 0;
+    right: 3px;
+    z-index: 10;
+}
+/* Forms Formatting */
+form .row {
+    clear: both;
+    margin: 5px 0px;
+}
+form .row label.left {
+    float: left;
+    width: 12em;
+    margin-right: 30px;
+}
+form .submit {
+    clear: both;
+    margin-left: 184px;
+}
+form.formBox {
+    margin: 10px 0;
+    padding: 5px;
+    background: #f5f5f5;
+}
+/** INSTALLATION **/
+fieldset#install {
+    position: relative;
+    background: #FFFAED;
+    border: 1px solid #999;
+    border-radius: 5px;
+    padding: 15px;
+    max-width: 680px;
+}
+#install code {
+    display: block;
+    margin: 20px;
+    margin-bottom: 0px;
+}
+#install .submit {
+    position: absolute;
+    right: 15px;
+    padding: 5px;
+    background: #0C3950;
+    border: 1px solid #999;
+    box-shadow: 2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+    -webkit-box-shadow: 2px 2px 5px #999;
+    -o-box-shadow: 2px 2px 5px #999;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    color: #fff;
+}

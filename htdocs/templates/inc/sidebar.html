@@ -1,0 +1,29 @@
+<div class="userpref">
+	<img src="/img/user_gray.png" id="user" alt="" /> Admin <img src="/img/disconnect.png" id="logout" alt="" />
+</div>
+<ul class="navigation">
+	<li><a href="/">Dashboard</a></li>
+	<li{if $setup->nav_open('crawler') || ($smarty.server.REQUEST_URI eq '/')} class="open"{/if}>
+		Crawler
+		<ul style="display: list;">
+			<li><a href="/crawler/">Domains crawlen</a></li>
+			<li><a href="/crawler/?jobs=1" class="crawljobs">Crawler Jobs (<span>0</span>)</a></li>
+		</ul>
+	</li>
+	{if $auth->isInGroup('admin')}
+	<li{if $setup->nav_open('tables')} class="open"{/if}>
+		Tabellen
+		<ul>
+			<li><a href="/tables/networks.php">Netze</a></li>
+			<li><a href="/tables/domains.php">Domains</a></li>
+			<li><a href="/tables/server.php">Server</a></li>
+		</ul>
+	</li>
+	{/if}
+	<li{if $setup->nav_open('system')} class="open"{/if}>
+		Einstellungen
+		<ul>
+			<li><a href="/system/users.php">Benutzer</a></li>
+		</ul>
+	</li>
+</ul>

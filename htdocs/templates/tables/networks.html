@@ -1,0 +1,32 @@
+{include file="inc/header.html"}
+<h1>Netzwerke</h1>
+<a href="/tables/networks.php?action=new">Neues Netzwerk anlegen</a>
+
+<table class="dataTable">
+	<thead>
+		<tr>
+			<th style="width:60px;">ID</th>
+			<th style="width:120px;">Datum</th>
+			<th>Netzwerkname</th>
+			<th style="width:20%;">Domains</th>
+			<th style="width:60px;text-align:right;">Aktion</th>
+		</tr>
+	</thead>
+	<tbody>
+	{if isset($data) && is_array($data)}
+	{foreach $data as $erg}
+	<tr>
+		<td>{$erg['id']}</td>
+		<td>{$erg['created']}</td>
+		<td>{$erg['networkname']}</td>
+		<td style="text-align:center;">{$erg['domains']}</td>
+		<td style="text-align:right;">
+			<a href="/crawler/spider.php?network={$erg['id']}" title="Netzwerk spidern"><img src="/img/chart_organisation.png" alt="Netzwerk spidern" /></a>
+			<img src="/img/chart_organisation_delete.png" alt="Netzwerk löschen" title="Netzwerk löschen" class="pClick" id="{$erg['id']}" />
+		</td>
+	</tr>
+	{/foreach}
+	{/if}
+	</tbody>
+</table>
+{include file="inc/footer.html"}

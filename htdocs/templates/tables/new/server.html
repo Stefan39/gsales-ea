@@ -1,0 +1,10 @@
+{if !isset($nohead)}{include file="inc/header.html"}{/if}
+<h1>Neuen Server anlegen</h1>
+<form action="" method="post" class="formBox">
+	<div class="row">
+		<label for="name" class="left">Servername</label>
+		<input type="text" name="name" id="name" value="{if isset($data)}{$data['name']}{/if}" placeholder="Servername" />
+	</div>
+	{if !isset($nohead)}<p class="submit"><input type="submit" name="save" value="Speichern" /></p>{/if}
+</form>
+{if !isset($nohead)}{include file="inc/footer.html"}{/if}

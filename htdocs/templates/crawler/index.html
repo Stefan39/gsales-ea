@@ -1,0 +1,17 @@
+{include file="inc/header.html"}
+
+<h1>Crawler starten</h1>
+<p>Um den Crawler zu starten, in dem folgendem Textfeld die durchzucrawlenden Domains (ohne http:// - je Zeile eine 
+Domain ohne abschließendes Slash) eintragen. Der CLI-Crawler startet mittels Cron automatisch und liest die Domains 
+einzeln ein.</p>
+<p>Existieren die Domains noch nicht in den Tabellen, werden diese automatisch dort als neues Netzwerk mit dem
+Netzwerknamen &quot;Network-[timestamp]&quot; und einem temporären Servernamen &quot;Server-[timestamp]&quot;
+angelegt. Existiert eine der Domains bereits in der Tabelle, werden diese entsprechend des Crawl-Jobs makiert. Nach
+Abschluss des Crawl-Jobs können diese Daten dann bearbeitet werden.</p>
+<p>Nach Absenden des Formulars gelangt man zur Jobqueue, die per Ajax den Fortschritt des CLI-Crawlers anzeigt.</p>
+<form action="/crawler/index.php" method="post">
+	<div class="row">
+	<textarea name="domains" id="domains" placeholder="www.domain.tld - eine je Zeile"></textarea></div>
+	<p><input type="submit" name="crawl" value="Crawlen" /></p>
+</form>
+{include file="inc/footer.html"}

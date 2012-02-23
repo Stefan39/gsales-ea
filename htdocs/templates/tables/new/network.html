@@ -1,0 +1,24 @@
+{if !isset($nohead)}{include file="inc/header.html"}{/if}
+<h1>Neues Netzwerk anlegen</h1>
+<form action="" method="post" class="formBox">
+	<div class="row">
+		<label for="networkname" class="left">Netzwerkname</label>
+		<input type="text" name="networkname" id="networkname" value="{if isset($data['networkname'])}{$data['networkname']}{/if}" placeholder="Netzwerkname" />
+	</div>
+	<div class="row">
+		<label for="subnetz" class="left">Netz unterhalb von</label>
+		<select name="subnetz" id="subnetz" size="1" placeholder="Sub-Netzwerk">
+			<option>Ohne</option>
+			{if isset($netze) && is_array($netze)}
+			{foreach $netze as $netz}
+			<option value="{$netz['id']}">
+				{if !empty($netz['subnetz'])}- {/if}
+				{$netz['networkname']}
+			</option>
+			{/foreach}
+			{/if}
+		</select>
+	</div>
+	{if !isset($nohead)}<p class="submit"><input type="submit" name="save" value="Speichern" /></p>{/if}
+</form>
+{if !isset($nohead)}{include file="inc/footer.html"}{/if}
