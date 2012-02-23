@@ -1,0 +1,38 @@
+
+Installation:
+-------------
+Die neue Version gsales-ea-v2 arbeitet nicht mehr mit dem ZendFramework sondern
+hauptsächlich mit eigenen Implementierungen und PEAR-Packages. Daher ist es
+notwendig, dass folgende PEAR-Packages zuvor installiert werden müssen:
+
+- PEAR
+- MDB2
+- MDB2_Driver_mysql
+- Config_Lite
+- Log
+
+und falls ebenfalls die Oberfläche mehrsprachig gebraucht wird auch:
+- Translation2
+- I18Nv2
+- File_Gettext
+- Cache_Lite
+
+Die Mehrsprachigkeit kann in der Konfiguration bei der Installation (de-)
+aktiviert werden. Wird diese aktiviert, muss der Pfad zu den Sprachdateien
+(normal im Ordner htdocs/i18n mit Dateinamen wie de_DE.po, de_DE.mo, etc.)
+angegeben werden. Eine de_DE.pot zum Übersetzen in anderen Sprachen ist im
+Ordner htdocs/i18n vorhanden.
+
+Bei der Installation wird ebenfalls ein Systemuser angelegt, in dem die
+Installation automatisch eine .htaccess mit AuthBasic Methode anlegt. Legt
+man bereits vorher manuell eine Authentifikation mit AuthBasic fest, erkennt
+der Installer das und überspringt diesen Schritt. Das System basiert auf
+AuthBasic. Der Grund hierzu ist einfach: Ich möchte den Mitarbeitern meines
+Steuerberaters Zugriff auf das System geben, damit diese die Rechnungen / das
+Journal dort jederzeit einsehen und PDF - Rechnungen herunterladen können.
+
+Das System arbeitet auf modernste Techniken mit jQuery und teils CSS3,
+benötigt deshalb auch einen modernen Browser (z.B. Firefox > 8, IE > 9, etc.)
+Außerdem wird mindestens PHP in der Version 5.2 sowie MySQL in der Version 5
+benötigt.
+
